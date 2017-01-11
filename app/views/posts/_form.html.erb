@@ -1,0 +1,7 @@
+<%= bootstrap_form_for @post do |form| %>
+    <%= form.text_field :title %> <br>
+    <br>
+    <%= form.text_area :body, style: 'height: 300px'  %> <br>
+    <br>
+    <%= form.submit %>
+<% end %>
