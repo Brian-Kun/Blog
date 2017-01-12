@@ -4,20 +4,17 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all.order("created_at DESC")
-
-    if @posts.empty?
-      render
-    end
   end
 
   def new
     # Creates a post so the form can fill it out
     @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
     # Creates the actual post from the parameters and then redirects to if if created successfully
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post
     else
@@ -28,7 +25,6 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to root_path
-
   end
 
   def update
@@ -47,7 +43,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-
+    #
   end
 
 

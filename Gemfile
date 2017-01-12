@@ -16,6 +16,8 @@ gem 'autoprefixer-rails'
 gem 'bootswatch-rails'
 # For the forms yo
 gem 'bootstrap_form'
+# User auth baby
+gem 'devise', '~> 4.2'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

@@ -16,14 +16,20 @@
         <div class="navbar-header">
           <%= link_to "Brian's Blog", root_path, :class => 'navbar-brand' %>
         </div>
+
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><%= link_to "New Post", new_post_path %></li>
         </ul>
       </div>
     </nav>
 
+
     <div class="container">
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
       <%= yield %>
     </div>
+
+
   </body>
 </html>
