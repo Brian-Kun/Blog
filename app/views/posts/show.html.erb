@@ -3,5 +3,7 @@
 <p><%= simple_format @post.body %></p>
 <br>
 <p>by Brian Ramirez. <%= @post.created_at.strftime('%c') %></p>
-<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-warning' %>
-<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+<% if user_signed_in? %>
+  <%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-warning' %>
+  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger' %>
+<% end %>
